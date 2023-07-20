@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import shareIcon from '../images/shareIcon.svg';
@@ -79,7 +80,8 @@ function DoneRecipes() {
         <div id="done-recipes">
           {filteredRecipes.map((recipe, index) => (
             <div
-              className="recipe-card flex w-[318px] h-[135px] bg-white rounded-[5px] border border-gray mb-4"
+              className="recipe-card flex w-[318px]
+                h-[135px] bg-white rounded-[5px] border border-gray mb-4"
               key={ index }
             >
               <Link to={ `/meals/${recipe.id}` }>

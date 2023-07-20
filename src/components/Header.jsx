@@ -5,6 +5,8 @@ import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
 import SearchBar from './SearchBar';
 import mealIcon from '../images/mealIcon.svg';
+import chefmenu from '../images/chefsmenu.png';
+import cheflogo from '../images/cheflogo.svg';
 import '../index.css';
 
 function Header() {
@@ -41,13 +43,13 @@ function Header() {
 
       <div className="container-header">
         <div className="flex items-center">
-          <img src="/img/chef_logo.svg" alt="chef logo" className="chef-logo" />
+          <img src={ cheflogo } alt="chef logo" className="chef-logo" />
 
           <h1
             data-testid="page-title"
             className="text-xl font-bold text-red"
           >
-            <img src="/img/chefs_menu.png" alt="title" className="menu-logo" />
+            <img src={ chefmenu } alt="title" className="menu-logo" />
           </h1>
         </div>
 

@@ -1,11 +1,11 @@
 {
-  "homepage": "https://fernando-arvelos.github.io/app-receitas",
-  "name": "recipes-app",
+  "name": "chefsmenu",
   "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "16 || 18"
   },
+  "homepage": "https://fernando-arvelos.github.io/chefsmenu",
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",
     "bootstrap": "^5.2.3",

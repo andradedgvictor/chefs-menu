@@ -108,4 +108,35 @@
   .list-favorite {
     @apply flex w-[318px] h-[135px] bg-white rounded-[5px] border border-gray mb-4;
   }
+
+  /* ------------------------------------------------------------------------------- */
+
+  /* Details Card */
+  .divtitle-details {
+    @apply flex flex-col items-center mt-[-170px] mb-8 sm:mt-[-190px] md:mt-[-450px] md:mb-20;
+  }
+
+  .h1-details {
+    @apply text-center text-white text-xl md:text-3xl font-black uppercase tracking-widest;
+  }
+
+  .h2-details {
+    @apply text-black text-xl font-bold mt-9 ml-3;
+  } 
+
+  .p-details {
+    @apply leading-none text-gray m-4 text-gray;
+  }
+
+  /* ------------------------------------------------------------------------------- */
+
+  /* Header Recipe */
+  .main-header-recipe {
+    @apply flex justify-between items-center w-screen h-20 md:h-32;
+  }
+
+  .p-header-recipe {
+    @apply text-yellow text-lg md:text-3xl font-bold;
+  }
+  
 }

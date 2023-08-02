@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import copy from 'clipboard-copy';
@@ -67,11 +68,15 @@ function HeaderRecipe() {
   };
 
   return (
-    <div>
+    <main className="main-header-recipe">
       { recipeDetails[0]
       && (
-        <div>
-          <p data-testid="category-header">{ recipeDetails[0].strCategory }</p>
+        <div className="ml-8 md:ml-16">
+          <p
+            className="p-header-recipe"
+          >
+            { recipeDetails[0].strCategory }
+          </p>
         </div>
       )}
       <div>
@@ -80,19 +85,22 @@ function HeaderRecipe() {
             src={ shareIcon }
             alt="share"
             data-testid="share-btn"
+            className="w-7 md:w-9"
           />
         </button>
-        <button onClick={ handleFavorite }>
+        <button
+          onClick={ handleFavorite }
+          className="mr-8 md:mr-16 ml-3"
+        >
           <img
             src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
             alt={ isFavorite ? 'liked' : 'like' }
-            width="26"
-            height="26"
             data-testid="favorite-btn"
+            className="w-7 md:w-9"
           />
         </button>
       </div>
-    </div>
+    </main>
   );
 }
 

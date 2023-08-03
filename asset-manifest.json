@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/chefsmenu/static/css/main.98b2a3d7.css",
-    "main.js": "/chefsmenu/static/js/main.6f4e7620.js",
+    "main.css": "/chefsmenu/static/css/main.bd30cc29.css",
+    "main.js": "/chefsmenu/static/js/main.5b824a11.js",
     "static/media/tomate.png": "/chefsmenu/static/media/tomate.aa0745f82393b0e8776d.png",
     "static/media/cheflogo.svg": "/chefsmenu/static/media/cheflogo.b497edbdd595e9661b22f463de7d3dd4.svg",
     "static/media/logo.svg": "/chefsmenu/static/media/logo.27b1460d21334b39ad316248014058a3.svg",
-    "static/media/shareIcon.svg": "/chefsmenu/static/media/shareIcon.87def1bd1dff9af9263f046c3b9bd31a.svg",
     "static/media/profileIcon.svg": "/chefsmenu/static/media/profileIcon.44eb3608f431845fe2fc2d2a23d758ae.svg",
-    "static/media/whiteHeartIcon.svg": "/chefsmenu/static/media/whiteHeartIcon.2b822118952dc5140129c6349fcd0472.svg",
     "static/media/searchIcon.svg": "/chefsmenu/static/media/searchIcon.7353564d025de989f86f66ecb0202a04.svg",
-    "static/media/blackHeartIcon.svg": "/chefsmenu/static/media/blackHeartIcon.083cb006913d197c95857ebfa2161db7.svg",
     "static/media/mealIcon.svg": "/chefsmenu/static/media/mealIcon.dc2624d8f1a24b0c7d18bd1e321cc63b.svg",
     "static/media/slick.svg": "/chefsmenu/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/chefsmenu/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/chefsmenu/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/chefsmenu/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/shareIcon.svg": "/chefsmenu/static/media/shareIcon.9bae4e0c4a08a9922c2840c550e356b6.svg",
     "static/media/favorite.svg": "/chefsmenu/static/media/favorite.4e6133bea43a9eedd7e0d88fb41e62e0.svg",
+    "static/media/whiteHeartIcon.svg": "/chefsmenu/static/media/whiteHeartIcon.5eae3966ef9123b9c465ea84c698d1f2.svg",
     "static/media/Perfil.svg": "/chefsmenu/static/media/Perfil.5844742540642b2e5abd208a3fe6f615.svg",
     "static/media/Group.svg": "/chefsmenu/static/media/Group.5687a56a759fb53102bd336514c6a5f1.svg",
     "index.html": "/chefsmenu/index.html",
     "static/media/logout.svg": "/chefsmenu/static/media/logout.ce2cc3cc96ad65cba42bd616e87ac599.svg",
     "static/media/drinkIcon.svg": "/chefsmenu/static/media/drinkIcon.05d1a08c283b2667ba08a4df48ed0c17.svg",
-    "main.98b2a3d7.css.map": "/chefsmenu/static/css/main.98b2a3d7.css.map",
-    "main.6f4e7620.js.map": "/chefsmenu/static/js/main.6f4e7620.js.map"
+    "static/media/blackHeartIcon.svg": "/chefsmenu/static/media/blackHeartIcon.4530be5d251e61b9996c864249f2cdf4.svg",
+    "main.bd30cc29.css.map": "/chefsmenu/static/css/main.bd30cc29.css.map",
+    "main.5b824a11.js.map": "/chefsmenu/static/js/main.5b824a11.js.map"
   },
   "entrypoints": [
-    "static/css/main.98b2a3d7.css",
-    "static/js/main.6f4e7620.js"
+    "static/css/main.bd30cc29.css",
+    "static/js/main.5b824a11.js"
   ]
 }

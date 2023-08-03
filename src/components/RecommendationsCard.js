@@ -15,7 +15,7 @@ function RecommendationsCard({ recipes }) {
   const maxRecommendations = 6;
 
   return (
-    <Slider { ...settings } data-testid="recommendation-card">
+    <Slider { ...settings }>
       {recipes.length > 0
         && recipes
           .filter((recipe, index) => index < maxRecommendations)
@@ -27,10 +27,9 @@ function RecommendationsCard({ recipes }) {
               <img
                 src={ recommendation.strDrinkThumb || recommendation.strMealThumb }
                 alt={ recommendation.strDrink || recommendation.strMeal }
-                width="136px"
-                height="134px"
+                className="w-[8.438rem] rounded-md"
               />
-              <h3 data-testid={ `${index}-recommendation-title` }>
+              <h3 className="w-[8.438rem]">
                 {recommendation.strDrink || recommendation.strMeal}
               </h3>
             </div>

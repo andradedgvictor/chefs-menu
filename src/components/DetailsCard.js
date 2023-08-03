@@ -74,8 +74,8 @@ function DetailsCard({
             </p>
           </div>
 
-          <div className="flex flex-col w-screen">
-            <h2 className="h2-details">Video</h2>
+          <h2 className="h2-details">Video</h2>
+          <div className="flex flex-col items-center">
             {currentPath.includes('meals') && (
               <iframe
                 width="336"
@@ -86,10 +86,12 @@ function DetailsCard({
                 allowFullScreen
                 title="Embedded youtube"
                 data-testid="video"
-                className="w-auto bg-black bg-opacity-30"
+                className="bg-black bg-opacity-30 w-full"
               />
             )}
           </div>
+
+          <h2 className="h2-details">Recommended</h2>
           <RecommendationsCard
             recipes={ currentPath.includes('meals') ? drinks : meals }
           />

@@ -76,7 +76,9 @@ function RecipeDetails() {
         recipeInstructions={ recipeDetails[0].strInstructions }
         recipeVideo={ currentPath.includes('meals') ? recipeDetails[0].strYoutube : '' }
       />}
-      { !recipeMade
+
+      <div className="flex justify-center">
+        { !recipeMade
       && (
         <Link
           to={
@@ -87,7 +89,7 @@ function RecipeDetails() {
         >
           <button
             data-testid="start-recipe-btn"
-            className="fixed bottom-0"
+            className="button-RecipeDetails"
           >
             {recipeInProgress
               ? 'Continue Recipe'
@@ -95,6 +97,7 @@ function RecipeDetails() {
           </button>
         </Link>
       )}
+      </div>
       { shareTextStatus && (
         <p>Link copied!</p>
       )}

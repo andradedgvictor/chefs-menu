@@ -138,5 +138,12 @@
   .p-header-recipe {
     @apply text-yellow text-lg md:text-3xl font-bold;
   }
+
+  /* ------------------------------------------------------------------------------- */
+
+  /* RecipeDetails */
+  .button-RecipeDetails {
+    @apply bottom-0 mt-11 mb-4 w-[300px] sm:w-[336px] h-10 bg-yellow rounded-[5px] text-gray text-sm font-bold uppercase tracking-wide
+  }
   
 }

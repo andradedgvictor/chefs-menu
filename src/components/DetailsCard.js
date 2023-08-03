@@ -74,18 +74,22 @@ function DetailsCard({
             </p>
           </div>
 
-          {currentPath.includes('meals') && (
-            <iframe
-              width="336"
-              height="234"
-              src={ `https://www.youtube.com/embed/${embedId()}` }
-              allow="accelerometer;
+          <div className="flex flex-col w-screen">
+            <h2 className="h2-details">Video</h2>
+            {currentPath.includes('meals') && (
+              <iframe
+                width="336"
+                height="234"
+                src={ `https://www.youtube.com/embed/${embedId()}` }
+                allow="accelerometer;
                   autoplay; clipboard-write; encrypted-media; gyroscope"
-              allowFullScreen
-              title="Embedded youtube"
-              data-testid="video"
-            />
-          )}
+                allowFullScreen
+                title="Embedded youtube"
+                data-testid="video"
+                className="w-auto bg-black bg-opacity-30"
+              />
+            )}
+          </div>
           <RecommendationsCard
             recipes={ currentPath.includes('meals') ? drinks : meals }
           />

@@ -125,7 +125,7 @@
   } 
 
   .p-details {
-    @apply leading-none text-gray m-4 text-gray;
+    @apply leading-none text-gray m-4;
   }
 
   /* ------------------------------------------------------------------------------- */

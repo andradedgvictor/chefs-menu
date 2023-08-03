@@ -42,16 +42,12 @@ function Header() {
     <header>
 
       <div className="container-header">
-        <div className="flex items-center">
-          <img src={ cheflogo } alt="chef logo" className="chef-logo" />
-
-          <h1
-            data-testid="page-title"
-            className="text-xl font-bold text-red"
-          >
+        <Link to="/meals">
+          <div className="flex items-center">
+            <img src={ cheflogo } alt="chef logo" className="chef-logo" />
             <img src={ chefmenu } alt="title" className="menu-logo" />
-          </h1>
-        </div>
+          </div>
+        </Link>
 
         <div className="flex items-center">
           <button

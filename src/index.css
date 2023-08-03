@@ -143,7 +143,25 @@
 
   /* RecipeDetails */
   .button-RecipeDetails {
-    @apply bottom-0 mt-11 mb-4 w-[300px] sm:w-[336px] h-10 bg-yellow rounded-[5px] text-gray text-sm font-bold uppercase tracking-wide
+    @apply bottom-0 mt-11 mb-4 w-[18.75rem] sm:w-[21rem] h-10 bg-yellow rounded-[0.313rem] text-gray text-sm font-bold uppercase tracking-wide
+  }
+
+  /* ------------------------------------------------------------------------------- */
+
+  /* RecipeInProgress */
+  .checkbox-container {
+    @apply flex flex-col mt-2 bg-white rounded-md border border-zinc
   }
   
+  .input-recipeinprogress {
+    @apply mt-[0.438rem] mr-[0.563rem] mb-[0.688rem] ml-[1.125rem] w-[1.063rem] h-[1.063rem]
+  }
+
+  .bg-transparentblack {
+    @apply absolute inset-0 z-[-1] h-[34.375rem] bg-black bg-opacity-50
+  }
+
+  .button-recipeinprogress {
+    @apply mt-11 mb-4 w-[18.75rem] sm:w-[21rem] h-10 bg-yellow rounded-[0.313rem] text-gray text-sm font-bold uppercase tracking-wide disabled:bg-gray disabled:text-white
+  }
 }

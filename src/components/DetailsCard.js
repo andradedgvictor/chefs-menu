@@ -33,6 +33,7 @@ function DetailsCard({
       return videoId;
     }
   };
+  console.log(recipeVideo);
 
   return (
     <div className="flex flex-col">
@@ -78,15 +79,13 @@ function DetailsCard({
           <div className="flex flex-col items-center">
             {currentPath.includes('meals') && (
               <iframe
-                width="336"
-                height="234"
                 src={ `https://www.youtube.com/embed/${embedId()}` }
                 allow="accelerometer;
                   autoplay; clipboard-write; encrypted-media; gyroscope"
                 allowFullScreen
                 title="Embedded youtube"
                 data-testid="video"
-                className="bg-black bg-opacity-30 w-full"
+                className="bg-black bg-opacity-30 w-full h-60 md:h-[37.5rem]"
               />
             )}
           </div>

@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { RecipeIsFavorite,
-  workFavorite } from '../helpers/localStoregefn';
-import shareIcon from '../images/shareIcon.svg';
-import blackHeartIcon from '../images/blackHeartIcon.svg';
-import whiteHeartIcon from '../images/whiteHeartIcon.svg';
-
-const copy = require('clipboard-copy');
+import HeaderRecipe from '../components/HeaderRecipe';
 
 function RecipeInProgress() {
   const history = useHistory();
   const [recipeData, setRecipeData] = useState([]);
   const { pathname } = history.location;
   const [checkedIngredients, setCheckedIngredients] = useState([]);
-  const [copyed, setCopyed] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +18,6 @@ function RecipeInProgress() {
       setRecipeData(data);
     };
     fetchData();
-    setIsFavorite(!RecipeIsFavorite(pathname));
   }, [pathname]);
 
   useEffect(() => {
@@ -99,97 +90,113 @@ function RecipeInProgress() {
     history.push('/done-recipes');
   };
 
-  const onShare = () => {
-    copy(window.location.href.replace('/in-progress', ''));
-    setCopyed(true);
-    global.alert('Link copied!');
-  };
-
-  const onFavorite = () => {
-    setIsFavorite(RecipeIsFavorite(pathname));
-    workFavorite(recipeData, pathname);
-  };
-
   const finish = checkedIngredients
     .filter((ingredient) => ingredientsArray.includes(ingredient));
 
+  const embedId = () => {
+    if (dataRender[0].strYoutube) {
+      const urlParams = new URLSearchParams(new URL(dataRender[0].strYoutube).search);
+      const videoId = urlParams.get('v');
+      return videoId;
+    }
+  };
+
   return (
-    <div>
+    <div className="flex flex-col">
+      <HeaderRecipe />
+
       {pathname.split('/')[1] === 'drinks'
       || pathname.split('/')[1] === 'meals' ? (
           dataRender
         && dataRender.length > 0
         && (
-          <div>
-            <img
-              src={ dataRender[0].strDrinkThumb || dataRender[0].strMealThumb }
-              alt=""
-              data-testid="recipe-photo"
-            />
-            { copyed ? <p>Link copied!</p> : ''}
-            <button
-              onClick={ onShare }
-              data-testid="share-btn"
-            >
+          <div className="flex flex-col">
+            <div className="flex flex-col justify-center items-center">
+              <div className="bg-transparentblack" />
               <img
-                src={ shareIcon }
-                alt="share"
+                src={ dataRender[0].strDrinkThumb || dataRender[0].strMealThumb }
+                alt=""
+                className="w-screen z-[-2] mt-[-9.25rem] md:mt-[-25.625rem]"
               />
-            </button>
-            <button
-              onClick={ onFavorite }
-            >
-              <img
-                data-testid="favorite-btn"
-                src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
-                alt="share"
-              />
-            </button>
-            <h1 data-testid="recipe-title">
-              {dataRender[0].strDrink || dataRender[0].strMeal}
-            </h1>
-            <h2 data-testid="recipe-category">{dataRender[0].strCategory}</h2>
-            {pathname.split('/')[1] === 'drinks' && (
-              <h3 data-testid="recipe-category">{dataRender[0].strAlcoholic}</h3>
-            )}
-            <div className="checkbox-container">
-              {ingredientsArray.map((ingredient, index) => (
-                <label
-                  htmlFor={ ingredient }
-                  key={ index }
-                  data-testid={ `${index}-ingredient-step` }
-                >
-                  <input
-                    type="checkbox"
-                    name={ ingredient }
-                    id={ ingredient }
-                    key={ index }
-                    onChange={ (event) => scratchText(event) }
-                    checked={ isChecked(ingredient) }
-                  />
-                  <span
-                    style={ {
-                      textDecoration: isChecked(ingredient)
-                        ? 'line-through'
-                        : 'none',
-                    } }
-                  >
-                    {ingredient}
-                  </span>
-                </label>
-              ))}
             </div>
-            <p data-testid="instructions">{dataRender[0].strInstructions}</p>
+
+            <div className="divtitle-details">
+              <h1 className="h1-details">
+                {dataRender[0].strDrink || dataRender[0].strMeal}
+              </h1>
+              <h1 className="h1-details">{dataRender[0].strCategory}</h1>
+              {pathname.split('/')[1] === 'drinks' && (
+                <h1 className="h1-details">{dataRender[0].strAlcoholic}</h1>
+              )}
+            </div>
+
+            <div className="bg-white">
+              <div className="flex flex-col mx-3">
+                <h2 className="h2-details">Ingredient</h2>
+                <div className="checkbox-container">
+                  {ingredientsArray.map((ingredient, index) => (
+                    <label
+                      htmlFor={ ingredient }
+                      key={ index }
+                      data-testid={ `${index}-ingredient-step` }
+                    >
+                      <input
+                        type="checkbox"
+                        name={ ingredient }
+                        id={ ingredient }
+                        key={ index }
+                        onChange={ (event) => scratchText(event) }
+                        checked={ isChecked(ingredient) }
+                        className="input-recipeinprogress"
+                      />
+                      <span
+                        style={ {
+                          textDecoration: isChecked(ingredient)
+                            ? 'line-through'
+                            : 'none',
+                        } }
+                      >
+                        {ingredient}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+
+                <h2 className="h2-details">Instructions</h2>
+                <div className="checkbox-container">
+                  <p data-testid="instructions">{dataRender[0].strInstructions}</p>
+                </div>
+              </div>
+
+              <h2 className="h2-details">Video</h2>
+              <div className="flex flex-col items-center">
+                {pathname.includes('meals') && (
+                  <iframe
+                    src={ `https://www.youtube.com/embed/${embedId()}` }
+                    allow="accelerometer;
+                  autoplay; clipboard-write; encrypted-media; gyroscope"
+                    allowFullScreen
+                    title="Embedded youtube"
+                    data-testid="video"
+                    className="bg-black bg-opacity-30 w-full h-60 md:h-[37.5rem]"
+                  />
+                )}
+              </div>
+
+              <div className="flex justify-center">
+                <button
+                  data-testid="finish-recipe-btn"
+                  disabled={ finish.length !== ingredientsArray.length }
+                  onClick={ saveRecipe }
+                  className="button-recipeinprogress"
+                >
+                  Finalizar Receita
+                </button>
+              </div>
+            </div>
           </div>
         )
         ) : null}
-      <button
-        data-testid="finish-recipe-btn"
-        disabled={ finish.length !== ingredientsArray.length }
-        onClick={ saveRecipe }
-      >
-        Finalizar Receita
-      </button>
     </div>
   );
 }

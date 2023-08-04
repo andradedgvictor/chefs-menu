@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import shareIcon from '../images/shareIcon.svg';
 import Header from '../components/Header';
+import done from '../images/Group.svg';
+import Footer from '../components/Footer';
 
 function DoneRecipes() {
   const [doneRecipes, setDoneRecipes] = useState([]);
@@ -44,9 +46,9 @@ function DoneRecipes() {
   return (
     <div>
       <Header pageTitle="Done Recipes" />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-11">
 
-        <img className="mb-2 mt-5" src="/img/doneRecipes.svg" alt="favorite" />
+        <img className="mb-2 mt-5" src={ done } alt="Done Recipes" />
         <h1
           className="text-red text-xl font-black uppercase tracking-widest mb-9"
         >
@@ -77,11 +79,10 @@ function DoneRecipes() {
           </button>
         </div>
 
-        <div id="done-recipes">
+        <div className="flex flex-col items-center mx-6">
           {filteredRecipes.map((recipe, index) => (
             <div
-              className="recipe-card flex w-[318px]
-                h-[135px] bg-white rounded-[5px] border border-gray mb-4"
+              className="done-recipes"
               key={ index }
             >
               <Link to={ `/meals/${recipe.id}` }>
@@ -89,16 +90,16 @@ function DoneRecipes() {
                   src={ recipe.image }
                   alt={ recipe.name }
                   data-testid={ `${index}-horizontal-image` }
-                  className="w-[164px] h-[135px] rounded-tl-[5px] rounded-bl-[5px] z-[-1]"
+                  className="w-[8.438rem] rounded-tl-[5px] rounded-bl-[5px]"
                 />
               </Link>
-              <div className="ml-5 mt-2">
+              <div className="flex flex-col ml-2 mt-2 w-44 sm:w-56 md:w-[56.25rem]">
                 <div className="flex">
-                  <div className="flex flex-col mb-3">
+                  <div className="flex flex-col mb-3 w-36 sm:w-56 md:w-[46.25rem]">
                     <Link to={ `/drinks/${recipe.id}` }>
                       <h3
                         data-testid={ `${index}-horizontal-name` }
-                        className="w-[86px] text-gray text-xl font-bold"
+                        className="text-gray text-sm font-bold"
                       >
                         {recipe.name}
                       </h3>
@@ -121,7 +122,7 @@ function DoneRecipes() {
                       </p>
                     )}
                   </div>
-                  <div className="mt-1 ml-5">
+                  <div className="mt-1 ml-2 mr-2">
                     <button
                       src={ shareIcon }
                       data-testid={ `${index}-horizontal-share-btn` }
@@ -153,6 +154,7 @@ function DoneRecipes() {
         </div>
       </div>
       {copyMessage && <p>{copyMessage}</p>}
+      <Footer />
     </div>
   );
 }

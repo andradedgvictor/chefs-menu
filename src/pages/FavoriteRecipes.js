@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import shareIcon from '../images/shareIcon.svg';
@@ -5,6 +6,7 @@ import blackHeartIcon from '../images/blackHeartIcon.svg';
 import Header from '../components/Header';
 import '../index.css';
 import Footer from '../components/Footer';
+import favorite from '../images/favorite.svg';
 
 function FavoriteRecipes() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -60,9 +62,9 @@ function FavoriteRecipes() {
   return (
     <div>
       <Header pageTitle="Favorite Recipes" />
-      <div className="flex flex-col items-center mt-10">
+      <div className="flex flex-col items-center mt-10 mx-4">
 
-        <img className="w-14 mb-3" src="/img/favoriteRecipes.svg" alt="favorite" />
+        <img className="w-14 mb-3" src={ favorite } alt="favorite" />
         <h1
           className="text-red text-xl font-black uppercase tracking-widest mb-9"
         >
@@ -99,44 +101,47 @@ function FavoriteRecipes() {
         {filteredRecipes.map((recipe, index) => (
           <div
             key={ index }
-            className="list-favorite"
+            className="done-recipes"
           >
             <Link to={ `/meals/${recipe.id}` }>
               <img
                 src={ recipe.image }
                 alt={ `${recipe.name} recipe` }
                 data-testid={ `${index}-horizontal-image` }
-                className="w-[164px] h-[135px] rounded-tl-[5px] rounded-bl-[5px] z-[-1]"
+                className="w-[134.85px] rounded-tl-[5px] rounded-bl-[5px]"
               />
             </Link>
-            <div className="ml-5">
-              <div className="mt-8">
-                <Link to={ `/drinks/${recipe.id}` }>
-                  <h3
-                    data-testid={ `${index}-horizontal-name` }
-                    className="w-[86px] text-gray text-xl font-bold"
-                  >
-                    {recipe.name}
-                  </h3>
-                </Link>
-                {recipe.type === 'meal' ? (
-                  <p
-                    data-testid={ `${index}-horizontal-top-text` }
-                    className="text-gray text-[9px] font-light"
-                  >
-                    {`${recipe.nationality} - ${recipe.category}`}
-                  </p>
-                ) : (
-                  <p
-                    data-testid={ `${index}-horizontal-top-text` }
-                    className="text-gray text-[9px] font-light"
-                  >
-                    {recipe.alcoholic ? 'Alcoholic'
-                      : 'Non-Alcoholic'}
-                  </p>
-                )}
+            <div className="flex ml-2 mt-2 w-44 sm:w-56 md:w-[56.25rem]">
+              <div className="flex w-32 sm:w-44 md:w-[45.25rem]">
+                <div className="flex flex-col mb-3 w-32 sm:w-44 md:w-[45.25rem]">
+                  <Link to={ `/drinks/${recipe.id}` }>
+                    <h3
+                      data-testid={ `${index}-horizontal-name` }
+                      className="text-gray text-sm font-bold"
+                    >
+                      {recipe.name}
+                    </h3>
+                  </Link>
+                  {recipe.type === 'meal' ? (
+                    <p
+                      data-testid={ `${index}-horizontal-top-text` }
+                      className="text-gray text-[9px] font-light"
+                    >
+                      {`${recipe.nationality} - ${recipe.category}`}
+                    </p>
+                  ) : (
+                    <p
+                      data-testid={ `${index}-horizontal-top-text` }
+                      className="text-gray text-[9px] font-light"
+                    >
+                      {recipe.alcoholic ? 'Alcoholic'
+                        : 'Non-Alcoholic'}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="mt-4">
+
+              <div className="mt-1 ml-2 mr-2">
                 <button
                   src={ shareIcon }
                   data-testid={ `${index}-horizontal-share-btn` }

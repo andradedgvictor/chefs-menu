@@ -38,7 +38,7 @@ function DetailsCard({
   return (
     <div className="flex flex-col">
       <div className="flex flex-col justify-center items-center">
-        <div className="absolute inset-0 z-[-1] bg-black bg-opacity-50" />
+        <div className="absolute h-[37.5rem] inset-0 z-[-1] bg-black bg-opacity-50" />
         <img
           data-testid="recipe-photo"
           src={ recipeImg }

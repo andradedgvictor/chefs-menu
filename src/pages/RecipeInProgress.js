@@ -166,21 +166,21 @@ function RecipeInProgress() {
                 <div className="checkbox-container">
                   <p data-testid="instructions">{dataRender[0].strInstructions}</p>
                 </div>
-              </div>
 
-              <h2 className="h2-details">Video</h2>
-              <div className="flex flex-col items-center">
-                {pathname.includes('meals') && (
-                  <iframe
-                    src={ `https://www.youtube.com/embed/${embedId()}` }
-                    allow="accelerometer;
+                <h2 className="h2-details">Video</h2>
+                <div className="flex flex-col items-center">
+                  {pathname.includes('meals') && (
+                    <iframe
+                      src={ `https://www.youtube.com/embed/${embedId()}` }
+                      allow="accelerometer;
                   autoplay; clipboard-write; encrypted-media; gyroscope"
-                    allowFullScreen
-                    title="Embedded youtube"
-                    data-testid="video"
-                    className="bg-black bg-opacity-30 w-full h-60 md:h-[37.5rem]"
-                  />
-                )}
+                      allowFullScreen
+                      title="Embedded youtube"
+                      data-testid="video"
+                      className="bg-black bg-opacity-30 w-full h-60 md:h-[37.5rem]"
+                    />
+                  )}
+                </div>
               </div>
 
               <div className="flex justify-center">

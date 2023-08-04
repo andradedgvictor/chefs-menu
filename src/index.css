@@ -164,4 +164,11 @@
   .button-recipeinprogress {
     @apply mt-11 mb-4 w-[18.75rem] sm:w-[21rem] h-10 bg-yellow rounded-[0.313rem] text-gray text-sm font-bold uppercase tracking-wide disabled:bg-gray disabled:text-white
   }
+
+  /* ------------------------------------------------------------------------------- */
+
+  /* DoneRecipes */
+  .done-recipes {
+    @apply flex w-[20rem] sm:w-[23.125rem] md:w-[56.25rem] bg-white rounded-[5px] border border-gray mb-4;
+  }
 }

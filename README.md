@@ -1,4 +1,4 @@
-projeto do módulo de Frontend no curso da Trybe... Esse projeto foi em grupo, onde eu pude trabalhar com essas pessoas excelentes: Guilherme Muniz, Víctor Andrade e Gabrielli Santos.
+Esse é um projeto do módulo de Frontend no curso da Trybe... Esse projeto foi em grupo, onde eu pude trabalhar com essas pessoas excelentes: Guilherme Muniz, Víctor Andrade e Gabrielli Santos.
 Durante o projeto fomos desafiados a implementar um App para você que gosta de se aventurar na cozinha com várias Receitas, que demos o nome de "Chef's Menu".
 
 No app é possível encontrar várias receitas, tanto de comida quanto de bebidas, sendo possível filtrar por categorias, nome, ingredientes ou primeira letra.
